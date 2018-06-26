@@ -1,0 +1,36 @@
+                              /* logo */
+                              .skin-purple .main-header .logo {
+                              background-color: #451b66;
+                              }
+                              /* logo when hovered */
+                              .skin-blue .main-header .logo:hover {
+                              background-color: #451b66;
+                              }
+                              
+                              /* navbar (rest of the header) */
+                              .skin-purple .main-header .navbar {
+                              background-color: #451b66;
+                              }        
+                              
+                              /* main sidebar */
+                              .skin-purple .main-sidebar {
+                              background-color: #451b66;
+                              font-family: "verdana";
+                              font-size:15px;
+                              }
+                              
+                              /* active selected tab in the sidebarmenu */
+                              .skin-purple .main-sidebar .sidebar .sidebar-menu .active a{
+                              background-color: #552877;
+                              }
+                              
+                              /* other links in the sidebarmenu */
+                              .skin-purple .main-sidebar .sidebar .sidebar-menu a{
+                              background-color: #451b66;
+                              }
+                              
+                              /*titulo de la grafica */
+                              .box.box-solid.box-primary>.box-header {
+                              color:#ffffff;
+                              background:#451b66;
+                              }
