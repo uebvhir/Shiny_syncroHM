@@ -247,15 +247,30 @@ function(input, output) {
     
     # create plot
     if (input$scale == "asis"){
-      my_palette <- colorRampPalette(c(input$colNum1, "grey",input$colNum2))(n = 10)
+      my_palette <- colorRampPalette(c("blue3", "deepskyblue4", "deepskyblue2", "darkslategray2", "darkseagreen2",
+                                       "gainsboro", "goldenrod1", "gold", "lightpink", "hotpink", "red1", "indianred3", "red4",
+                                       "darkorange4", "gray0"))(n = 14)
+                                     
       image(imgflip(fx),
             #breaks = (1:(nlevels(ff2)+1))-.5,
             col = my_palette,
             xaxt = "n", yaxt = "n",
-            breaks = c(seq(-10,0.99,length=5), # for imput$col1
-                       #seq(0,86,1.15,length=1),  # for grey
-                       seq(1.01,10,length=6)) # for input$col2
-      )
+            breaks = c(seq(0, 0.199, length = 1),
+                      seq(0.2, 0.399,length = 1),
+                      seq(0.4, 0.599,length = 1),
+                      seq(0.6, 0.799,length = 1),
+                      seq(0.8, 0.999,length = 1),
+                      seq(1, 1,length = 1),
+                      seq(1.01, 1.3099, length = 1),
+                      seq(1.31, 1.6199, length = 1),
+                      seq(1.62, 1.9299, length=1),
+                       seq(1.93, 2.2399, length=1),
+                       seq(2.24, 2.5499, length=1),
+                      seq(2.55, 2.8599, length=1),
+                      seq(2.86, 3.1699, length=1),
+                       seq(3.17, 8, length=1),
+                       seq(8.01, 100, length=1)))
+     
       abline(v=seq(0, 1, length.out=length(names(dx)))+(0.5/length(names(dx))), col="grey3", lwd=1)
       abline(h=seq(0, 1, length.out=nrow(dx))+(0.5/nrow(dx)), col="grey3", lwd=1)
       axis(4, at=seq(0,1,length.out=nrow(dx)), labels=rev(rownames(fx)), cex.axis= 15/nrow(dx), las=2)
@@ -398,15 +413,30 @@ function(input, output) {
       
       # create plot
       if (input$scale == "asis"){
-        my_palette <- colorRampPalette(c(input$colNum1, "grey",input$colNum2))(n = 10)
+        my_palette <- colorRampPalette(c("blue3", "deepskyblue4", "deepskyblue2", "darkslategray2", "darkseagreen2",
+                                         "gainsboro", "goldenrod1", "gold", "lightpink", "hotpink", "red1", "indianred3", "red4",
+                                         "darkorange4", "gray0"))(n = 14)
+        
         image(imgflip(fx),
               #breaks = (1:(nlevels(ff2)+1))-.5,
               col = my_palette,
               xaxt = "n", yaxt = "n",
-              breaks = c(seq(-10,0.99,length=5), # for imput$col1
-                         #seq(0,86,1.15,length=1),  # for grey
-                         seq(1.01,10,length=6)) # for input$col2
-        )
+              breaks = c(seq(0, 0.199, length = 1),
+                         seq(0.2, 0.399,length = 1),
+                         seq(0.4, 0.599,length = 1),
+                         seq(0.6, 0.799,length = 1),
+                         seq(0.8, 0.999,length = 1),
+                         seq(1, 1,length = 1),
+                         seq(1.01, 1.3099, length = 1),
+                         seq(1.31, 1.6199, length = 1),
+                         seq(1.62, 1.9299, length=1),
+                         seq(1.93, 2.2399, length=1),
+                         seq(2.24, 2.5499, length=1),
+                         seq(2.55, 2.8599, length=1),
+                         seq(2.86, 3.1699, length=1),
+                         seq(3.17, 8, length=1),
+                         seq(8.01, 100, length=1)))
+        
         abline(v=seq(0, 1, length.out=length(names(dx)))+(0.5/length(names(dx))), col="grey3", lwd=1)
         abline(h=seq(0, 1, length.out=nrow(dx))+(0.5/nrow(dx)), col="grey3", lwd=1)
         axis(4, at=seq(0,1,length.out=nrow(dx)), labels=rev(rownames(fx)), cex.axis= 15/nrow(dx), las=2)
