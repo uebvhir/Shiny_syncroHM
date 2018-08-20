@@ -1,0 +1,40 @@
+---
+title: "Installation Instructions"
+author: "Alex Sanchez"
+date: "20 de agosto de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Libraries required
+
+This application needs the following libraries to be installed
+
+- For the user interface
+     + `shinydashboard`
+     + `shinyjs`
+     + `colourpicker`
+- For the server application
+     + `gplots`
+     + `RColorBrewer`
+     + `ggplot2`
+
+These packages should be installed and **available for all users of the application** in the computer hosting the Shiny server. This can be done with the following commands executed from the server's console:
+
+- `sudo su - -c "R -e \"install.packages(c('gplots', 'RColorBrewer', 'ggplot2'), repos='http://cran.rstudio.com/')\""`
+- `sudo su - -c "R -e \"install.packages(c('shinydashboard', 'shinyjs', 'colourpicker'), repos='http://cran.rstudio.com/')\""`
+
+# Copying the application to the server
+
+- With a standard Shiny server installation a directory `srv/shiny-apps` is created in the server's root directory. A simple place to put your app is in a sub-directory of the `shiny-apps` folder, say, "MY_APP"
+- Once this has been done you can run your app from the browser pointing it to : `http://<hostname>:3838/MY_APP/`
+     + Notice that hostname is the name of the server where the Shiny server has been installed, e.g. `uebshiny.vhir.org` and that __it does not include the names `/serv/shiny-apps`__
+- In summary, if everything goes well, after copying the folder `Shiny_syncroHM` to the remote directory `http://uebshiny.vhir.org/srv/shiny-apps` the app can be executed with the instruction <br> `http://uebshiny.vhir.org:3838/Shiny_syncroHM/`
+
+
+
+
+
